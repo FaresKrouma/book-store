@@ -15,11 +15,12 @@ const Add = () => {
   };
 
   const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await axios.post("http://localhost:3000/books", book);
-      // navigate("/");
+      navigate("/");
     } catch (err) {
       console.log(err);
     }
