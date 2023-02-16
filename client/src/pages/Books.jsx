@@ -17,7 +17,16 @@ const Books = () => {
     };
 
     fetchAllBooks();
-  }, []);
+  }, [books]);
+
+  const handleDelete = async (id) => {
+    console.log(id);
+    try {
+      await axios.delete(`http://localhost:3000/books/${id}`);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <BooksWrapper>
@@ -30,6 +39,10 @@ const Books = () => {
               <h3> {book.title}</h3>
               <p>"{book.desc}"</p>
               <span>{book.price} €</span>
+              <div className="btn-container">
+                <button>Edit</button>
+                <button onClick={() => handleDelete(book.id)}>Delete</button>
+              </div>
             </div>
           );
         })}
@@ -47,7 +60,7 @@ const BooksWrapper = styled.div`
   border: 1px solid black;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 3rem;
   padding: 15px 10px;
   align-items: center;
   overflow: hidden;
@@ -57,11 +70,11 @@ const BooksWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-
     justify-content: center;
     gap: 15px;
     .book {
       flex: 1;
+      gap: 5px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -81,6 +94,19 @@ const BooksWrapper = styled.div`
       span {
         font-size: 15px;
       }
+      .btn-container {
+        display: flex;
+        gap: 15px;
+        button {
+          padding: 2px 5px;
+          font-size: 12px;
+        }
+      }
     }
+  }
+  button {
+    font-size: 15px;
+    padding: 2px 15px;
+    font-weight: bold;
   }
 `;

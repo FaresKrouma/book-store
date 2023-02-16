@@ -27,7 +27,6 @@ const Add = () => {
     }
   };
 
-  console.log(book);
   return (
     <FormWrapper>
       <h2>Add New Book</h2>
@@ -61,7 +60,7 @@ const Add = () => {
           name="cover"
           autoComplete="off"
         />
-        <button onClick={handleSubmit}>submit book</button>
+        <button onClick={handleSubmit}>Add book</button>
       </form>
     </FormWrapper>
   );
@@ -121,12 +120,8 @@ const FormWrapper = styled.div`
       }
     }
     button {
-      background-color: #f3795d;
-      border: none;
-      padding: 8px 55px;
-      border-radius: 15px;
-      /* font-weight: bold; */
-      font-size: 15px;
+      padding: 2px 5px;
+      font-size: 14px;
       align-self: center;
     }
   }
