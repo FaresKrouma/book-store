@@ -64,7 +64,7 @@ app.delete("/books/:id", (req, res) => {
 
   db.query(q, [bookId], (err, data) => {
     if (err) return res.json(err);
-    return console.log("deleted");
+    return res.json("deleted");
   });
 });
 

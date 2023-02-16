@@ -59,7 +59,6 @@ const Books = () => {
 export default Books;
 
 const BooksWrapper = styled.div`
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -83,7 +82,8 @@ const BooksWrapper = styled.div`
       img {
         width: 250px;
         height: 400px;
-        background-color: black;
+        background-color: #aaaaaa79;
+        filter: blur(2px);
         object-fit: cover;
         border-radius: 15px;
       }
