@@ -26,17 +26,17 @@ const Books = () => {
         {books.map((book) => {
           return (
             <div className="book" key={book.id}>
-              {book.cover && <img src={book.cover} alt="book pic" />}
+              <img src={book.cover} alt="book pic" />
               <h3> {book.title}</h3>
-              <p>{book.desc}</p>
-              <span>{book.price}</span>
+              <p>"{book.desc}"</p>
+              <span>{book.price} €</span>
             </div>
           );
         })}
-        <Link to="/add">
-          <button> Add a new book</button>
-        </Link>
       </div>
+      <Link to="/add">
+        <button> Add a new book</button>
+      </Link>
     </BooksWrapper>
   );
 };
@@ -45,17 +45,40 @@ export default Books;
 
 const BooksWrapper = styled.div`
   border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px 10px;
+  align-items: center;
+  overflow: hidden;
   h1 {
   }
   .books-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    justify-content: center;
+    gap: 15px;
     .book {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       img {
+        width: 250px;
+        height: 400px;
+        background-color: black;
+        object-fit: cover;
+        border-radius: 15px;
       }
       h3 {
+        font-size: 2rem;
       }
       p {
+        color: #888;
       }
       span {
+        font-size: 15px;
       }
     }
   }
