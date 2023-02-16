@@ -40,7 +40,9 @@ const Books = () => {
               <p>"{book.desc}"</p>
               <span>{book.price} €</span>
               <div className="btn-container">
-                <button>Edit</button>
+                <Link to={`/update/${book.id}`}>
+                  <button>Edit</button>
+                </Link>
                 <button onClick={() => handleDelete(book.id)}>Delete</button>
               </div>
             </div>
