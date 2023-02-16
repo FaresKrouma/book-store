@@ -61,6 +61,7 @@ const BooksWrapper = styled.div`
     justify-content: center;
     gap: 15px;
     .book {
+      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
